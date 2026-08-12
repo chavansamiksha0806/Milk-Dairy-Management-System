@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="center-box">
+    <form method="post" class="form">
+
+        <h2>Add Farmer</h2>
+
+        <label>Farmer ID</label>
+        <input name="id" value="{{fid}}" readonly>
+
+        <label>Farmer Name</label>
+        <input name="name" required>
+
+     <label>Contact</label>
+<input name="contact" pattern="[0-9]{10}" maxlength="10" required 
+       title="Enter 10 digit mobile number">
+
+        <button>Add Farmer</button>
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+    </form>
+</div>
+
+{% endblock %}

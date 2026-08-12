@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="center-box">
+<form method="post" class="form">
+
+<h2>Edit Farmer</h2>
+
+<label>ID</label>
+<input value="{{f['id']}}" readonly>
+
+<label>Name</label>
+<input name="name" value="{{f['name']}}" required>
+
+<label>Contact</label>
+<input name="contact" value="{{f['contact']}}" required>
+
+<button>Update</button>
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+</form>
+</div>
+
+{% endblock %}

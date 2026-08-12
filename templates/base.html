@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dairy System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- NAVBAR -->
+<div class="navbar">
+
+    <div class="nav-left">
+        <!-- optional logo -->
+        <img src="{{ url_for('static', filename='images/logo.png') }}" class="nav-logo">
+    </div>
+
+  <div class="nav-center">
+    🥛 <span class="highlight">Dairy</span> Management System
+</div>
+
+    <div class="nav-right">
+        <span>👤 {{ session['user'] }}</span>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+
+</div>
+
+<div class="sidebar">
+  <h2 class="logo">🥛 Dairy</h2>
+
+    <a href="/dashboard">🏠 Dashboard</a>
+    <a href="/farmer/add">➕ Add Farmer</a>
+ <a href="{{ url_for('farmers') }}">👨‍🌾 Farmers</a>
+    <a href="/milk/add">🥛 Milk Entry</a>
+    <a href="/records">📋 Records</a>
+    <a href="/payments">💳 Payments</a>
+    <a href="/summary">📊 Summary</a>
+</div>
+
+<div class="main">
+    {% if message %}
+<div class="alert">{{ message }}</div>
+{% endif %}
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

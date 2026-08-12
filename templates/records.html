@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Milk Records</h2>
+
+<table>
+<tr>
+<th>Name</th><th>Animal</th><th>Litres</th><th>Degree</th><th>Session</th><th>Date</th><th>Total</th>
+</tr>
+
+{% for r in data %}
+<tr>
+<td>{{r['name']}}</td>
+<td>{{r['animal_type']}}</td>
+<td>{{r['litres']}}</td>
+<td>{{r['degree']}}</td>
+<td>{{r['session']}}</td>
+<td>{{r['date']}}</td>
+<td>{{r['total']}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

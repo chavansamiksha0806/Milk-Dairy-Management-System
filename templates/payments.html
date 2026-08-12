@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if request.args.get('msg') == 'success' %}
+<script>
+alert("Payment Successful ✅");
+</script>
+{% endif %}
+<h2>Payments</h2>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Transaction ID</th>
+<th>Action</th>
+</tr>
+
+{% for r in data %}
+<tr>
+<td>{{r['name']}}</td>
+<td>₹{{r['amount']}}</td>
+<td>{{r['status']}}</td>
+<td>{{ r['transaction_id'] }}</td>
+<td>
+    {% if r['status'] == 'Pending' %}
+<a href="{{ url_for('upi', id=r['id'], amount=r['amount']) }}">
+    Pay via UPI
+</a>
+        <a href="/upi/{{r['id']}}/{{r['amount']}}" class="btn upi">UPI</a>
+        <a href="/bill/{{r['id']}}">Download Bill</a>
+    {% else %}
+        <span class="paid">Paid ✅</span>
+    {% endif %}
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

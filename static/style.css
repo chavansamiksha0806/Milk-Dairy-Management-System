@@ -1,0 +1,447 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+    background: #f4f6f9; /* CLEAN BACKGROUND */
+}
+/* FULL PAGE CENTER WRAPPER */
+.login-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BACKGROUND */
+.login-bg {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('../images/cow.jpg') no-repeat center/cover;
+}
+
+/* CONTAINER */
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* LOGIN BOX (CARD) */
+.login-box {
+    width: 350px;
+    padding: 35px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.6s ease;
+}
+
+/* TITLE */
+.login-box h2 {
+    color: #2e7d32;
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    color: gray;
+}
+
+/* INPUT GROUP */
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+.icon {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px 12px 35px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* LABEL */
+.input-group label {
+    position: absolute;
+    left: 35px;
+    top: 12px;
+    background: white;
+    padding: 0 5px;
+    color: gray;
+    transition: 0.3s;
+}
+
+/* FLOAT EFFECT */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    font-size: 12px;
+    color: #2e7d32;
+}
+
+/* PASSWORD TOGGLE */
+.toggle {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* BUTTON */
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #2e7d32, #43a047);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* ERROR */
+.error {
+    background: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(90deg, #1b5e20, #43a047);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 0 20px;
+}
+
+/* LEFT (LOGO) */
+.nav-left {
+    width: 20%;
+}
+
+.nav-logo {
+    width: 40px;
+}
+
+/* CENTER TITLE */
+.nav-center {
+    width: 60%;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* RIGHT */
+.nav-right {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    background: #c62828;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background: #b71c1c;
+}
+.highlight {
+    color: #c8e6c9;
+}
+
+/* SIDEBAR MODERN */
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background: linear-gradient(180deg, #1b5e20, #2e7d32);
+    padding-top: 20px;
+     box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+
+}
+
+/* LOGO */
+.logo {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+     font-size: 22px;
+}
+
+/* LINKS */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: 0.3s;
+     position: relative;
+}
+
+/* HOVER EFFECT */
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+    padding-left: 25px;
+}
+
+/* ACTIVE LINK */
+.sidebar a.active {
+    background: rgba(255,255,255,0.3);
+}
+
+/* LEFT BORDER ANIMATION */
+.sidebar a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: #c8e6c9;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.sidebar a:hover::before {
+    opacity: 1;
+}
+/* MAIN */
+.main {
+    margin-left: 230px;
+    margin-top: 70px;
+    padding: 25px;
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+* {
+    transition: all 0.3s ease;
+}
+.form, .card, table, .upi-box {
+    backdrop-filter: blur(10px);
+}
+/* DASH TITLE */
+.dash-title {
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+.sidebar a.active {
+    background: rgba(255,255,255,0.3);
+}
+/* STATS */
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    flex: 1;
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.stat-card h1 {
+    font-size: 40px;
+}
+
+.stat-card h2 {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card, .card {
+    transition: all 0.3s ease;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px;
+    color: #2e7d32;
+}
+
+.card p {
+    margin: 10px;
+    color: #555;
+}
+
+/* FORM */
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* THIS FIXES CENTERING */
+}
+
+.form {
+    background: white;
+    padding: 25px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2e7d32;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+}
+
+th {
+    background: #2e7d32;
+    color: white;
+}
+
+td, th {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* BUTTONS */
+a {
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background: #2e7d32;
+}
+
+.upi {
+    background: #1565c0;
+}
+
+.paid {
+    color: green;
+    font-weight: bold;
+}
+
+/* UPI BOX */
+.upi-box {
+    width: 350px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 25px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+.alert {
+    background: #c8e6c9;
+    color: #2e7d32;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dairy Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="login-bg">
+
+<div class="login-wrapper">
+
+    <div class="login-container">
+        <form method="post" class="login-box">
+
+          <img src="{{ url_for('static', filename='images/logo.png') }}" width="80">
+<h2>🥛 Dairy System</h2>
+            <p class="subtitle">Sign in to continue</p>
+
+            {% if error %}
+            <div class="error">{{ error }}</div>
+            {% endif %}
+
+            <!-- USERNAME -->
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input name="username" required>
+                <label>Username</label>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="input-group">
+                <span class="icon">🔒</span>
+                <input id="password" name="password" type="password" required>
+                <label>Password</label>
+                <span class="toggle" onclick="togglePassword()">👁️</span>
+            </div>
+
+            <button type="submit">Login</button>
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+function togglePassword() {
+    let p = document.getElementById("password");
+    p.type = (p.type === "password") ? "text" : "password";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Farmer List</h2>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Contact</th>
+<th>Action</th>
+</tr>
+
+{% for f in data %}
+<tr>
+<td>{{f['id']}}</td>
+<td>{{f['name']}}</td>
+<td>{{f['contact']}}</td>
+<td>
+<a href="/farmer/edit/{{f['id']}}">Edit</a>
+<a href="/farmer/delete/{{f['id']}}" 
+   onclick="return confirm('Are you sure?')">Delete</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+{% if data %}
+    <!-- table -->
+{% else %}
+    <p>No farmers found</p>
+{% endif %}
+
+{% endblock %}

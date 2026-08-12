@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="dash-title">Dashboard</h2>
+
+<!-- STATS -->
+<div class="stats">
+
+    <div class="stat-card">
+        <h3>👨‍🌾</h3>
+        <h2>{{farmers}}</h2>
+        <p>Total Farmers</p>
+    </div>
+
+    <div class="stat-card">
+        <h1>🥛</h1>
+        <h2>{{milk}}</h2>
+        <p>Total Milk (L)</p>
+    </div>
+
+    <div class="stat-card">
+        <h1>💰</h1>
+        <h2>₹{{payment}}</h2>
+        <p>Total Payments</p>
+    </div>
+
+</div>
+
+<!-- MAIN CARDS -->
+<div class="cards">
+
+    <a href="/farmers" class="card">
+        <img src="{{ url_for('static', filename='images/cow.jpg') }}">
+        <h3>👨‍🌾 Farmers</h3>
+        <p>Manage farmer records</p>
+    </a>
+
+    <a href="/milk/add" class="card">
+        <img src="{{ url_for('static', filename='images/milk.jpg') }}">
+        <h3>🥛 Milk Entry</h3>
+        <p>Daily milk collection</p>
+    </a>
+
+    <a href="/payments" class="card">
+        <img src="{{ url_for('static', filename='images/payment.jpg') }}">
+        <h3>💳 Payments</h3>
+        <p>Manage payments</p>
+    </a>
+
+</div>
+<canvas id="milkChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+var ctx = document.getElementById('milkChart').getContext('2d');
+
+var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: {{ labels|safe }},
+        datasets: [{
+            label: 'Milk Collection',
+            data: {{ values|safe }},
+        }]
+    }
+});
+</script>
+
+{% endblock %}

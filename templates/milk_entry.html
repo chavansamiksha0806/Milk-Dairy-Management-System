@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="center-box">
+<form method="post" class="form">
+
+<h2>Milk Entry</h2>
+
+<label>Farmer</label>
+<select name="farmer_id">
+{% for f in farmers %}
+<option value="{{f['id']}}">{{f['id']}} - {{f['name']}}</option>
+{% endfor %}
+</select>
+
+<label>Animal</label>
+<select name="animal_type">
+<option>Cow</option>
+<option>Buffalo</option>
+</select>
+
+<label>Litres</label>
+<input name="litres" required>
+<label>Fat</label>
+<input name="fat" required>
+<label>SNF</label>
+<input name="snf" required>
+<label>Degree</label>
+<input name="degree" required>
+
+<label>Session</label>
+<select name="session">
+<option>Morning</option>
+<option>Evening</option>
+</select>
+
+<button>Submit</button>
+
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Monthly Summary</h2>
+
+<table>
+<tr><th>Month</th><th>Total</th></tr>
+
+{% for r in data %}
+<tr>
+<td>{{r['month']}}</td>
+<td>₹{{r['total']}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
