@@ -30,3 +30,9 @@ Milk-Dairy-Management-System/
 ├── requirements.txt
 ├── database.db
 └── README.md
+
+
+
+## 📸 Project Dashboard
+
+![Milk Dairy Management System Dashboard](dashboard.png)
