@@ -2,6 +2,10 @@
 
 A Flask-based web application for managing farmers, milk collection, milk quality, payments and dairy records.
 
+## 📸 Project Dashboard
+
+![Milk Dairy Management System Dashboard](Dashboard.png)
+
 ## ✨ Features
 
 - 👨‍🌾 Manage farmer records
@@ -9,6 +13,11 @@ A Flask-based web application for managing farmers, milk collection, milk qualit
 - 🧪 Manage milk quality information
 - 💰 Track payments
 - 📋 Maintain dairy records
+- 📊 View dairy management summary
+- 🔐 User login system
+- 💳 Payment management
+- 📄 Generate payment bills
+- 📱 Generate UPI payment QR codes
 
 ## 🛠️ Technologies Used
 
@@ -16,6 +25,9 @@ A Flask-based web application for managing farmers, milk collection, milk qualit
 - Flask
 - HTML
 - CSS
+- SQLite
+- ReportLab
+- QR Code
 
 ## 📁 Project Structure
 
@@ -24,13 +36,13 @@ Milk-Dairy-Management-System/
 │
 ├── static/
 ├── templates/
+│
 ├── app.py
 ├── db.py
 ├── models.py
 ├── requirements.txt
 ├── database.db
+├── Dashboard.png
+├── LICENSE
+├── .gitignore
 └── README.md
-'''
-## 📸 Project Dashboard
-
-![Milk Dairy Management System Dashboard](dashboard.png)
